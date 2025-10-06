@@ -4,6 +4,7 @@ To get a local copy up and running, follow these simple steps.
 1. Clone your forked repository to your local machine:
    ```bash
    git clone https://github.com/your-username/goalify.git
+   
 2. Navigate to the project directory:
    ```bash
    cd goalify
