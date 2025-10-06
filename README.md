@@ -13,10 +13,8 @@ Before you begin, ensure you have the following installed:
 
 **1️⃣ Clone the Repository**
 
-Clone your forked repository to your local machine:
-
 ```bash
-git clone https://github.com/your-username/goalify.git
+https://github.com/maneth909/goalify
 ```
 
 **2️⃣ Navigate to Project Directory**
