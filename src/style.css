@@ -96,3 +96,41 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Glass + smooth animations */
+html {
+  scroll-behavior: smooth;
+}
+action-btn {
+  position: relative;
+  overflow: hidden;
+}
+action-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.3), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+action-btn:hover::after {
+  opacity: 1;
+}
+
+theme-toggle {
+  transition: all 0.3s ease;
+}
+
+/* Separate glass effect for navbar sections */
+header nav > div, header nav > ul {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 9999px; /* pill shape */
+  padding: 0.25rem 0.75rem;
+}
+header nav > ul {
+  padding: 0.25rem 1rem;
+}
+
+

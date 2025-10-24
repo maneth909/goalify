@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | Goalify</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-blue-900 to-black flex items-center justify-center min-h-screen text-white">
+
+  <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg w-80">
+    <h2 class="text-2xl font-bold mb-4 text-center">Welcome Back</h2>
+    <input id="email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+    <input id="password" type="password" placeholder="Password" class="w-full mb-4 px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+    <button id="login-btn" class="w-full py-2 bg-blue-500 hover:bg-blue-400 rounded font-semibold">Login</button>
+    <p class="text-center text-sm mt-4">Don’t have an account? <a href="signup.html" class="text-blue-400 hover:underline">Sign up</a></p>
+  </div>
+
+  <script>
+    document.getElementById("login-btn").addEventListener("click", () => {
+      alert("Login successful (demo)");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

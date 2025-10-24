@@ -2,12 +2,125 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>goalify</title>
+    <title>Goalify</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+
+  <body class="bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white font-sans transition-colors duration-500" id="body">
+    <!-- 🌫️ Glass Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full backdrop-blur-lg bg-white/10 border-b border-white/20 z-50">
+      <nav class="flex justify-between items-center px-6 py-4">
+        <!-- Left Section: Logo -->
+        <div class="flex items-center space-x-2">
+          <!-- <img src="https://cdn-icons-png.flaticon.com/512/3177/3177361.png" alt="logo" class="w-8 h-8"> -->
+          <h1 class="text-2xl font-bold text-blue-400">⚽ Goalify</h1>
+        </div>
+
+        <!-- Center Section: Menu -->
+        <ul class="hidden md:flex space-x-8 text-sm uppercase tracking-wide">
+          <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+          <li><a href="#schedules" class="hover:text-blue-400">Matches</a></li>
+          <li><a href="#standings" class="hover:text-blue-400">Standings</a></li>
+          <li><a href="#scorers" class="hover:text-blue-400">Top Scorers</a></li>
+          <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+        </ul>
+
+        <!-- Right Section: Login / Signup -->
+        <div class="flex items-center space-x-4">
+          <button class="px-4 py-2 bg-transparent border border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-white transition nav-auth">Login</button>
+          <button class="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-400 transition nav-auth">Sign Up</button>
+          <button id="theme-toggle" class="p-2 bg-white/10 rounded-full text-sm hover:bg-white/20 transition">🌓</button>
+        </div>
+
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="pt-28">
+
+      <!-- 🏆 Hero Section -->
+      <section id="home" class="text-center py-20">
+        <h2 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
+          Real-Time Football Updates
+        </h2>
+        <p class="text-gray-300 text-lg mb-8">Live scores, league tables, and top scorers — all in one place.</p>
+        <button class="px-8 py-3 bg-blue-500 hover:bg-blue-400 rounded-full font-semibold shadow-lg transition">
+          Explore Matches
+        </button>
+      </section>
+
+      <!-- ⚽ Live / Upcoming Matches -->
+      <section id="schedules" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-3xl font-bold">Live & Upcoming Matches</h3>
+          <button id="view-more" class="text-blue-400 hover:text-blue-300">View More →</button>
+        </div>
+        <div id="matches-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </section>
+
+      <!-- 🏅 Premier League Standings -->
+      <section id="standings" class="bg-gray-800/50 py-12">
+        <div class="max-w-6xl mx-auto px-6">
+          <h3 class="text-3xl font-bold mb-6">Premier League Standings</h3>
+          <div class="overflow-x-auto rounded-2xl shadow-lg bg-white/10 backdrop-blur-md">
+            <table class="min-w-full text-left text-sm">
+              <thead class="bg-blue-600/50 text-white">
+                <tr>
+                  <th class="py-3 px-4">#</th>
+                  <th class="py-3 px-4">Club</th>
+                  <th class="py-3 px-4">P</th>
+                  <th class="py-3 px-4">Pts</th>
+                </tr>
+              </thead>
+              <tbody id="standings-body" class="divide-y divide-gray-700"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ⚡ Top Scorers -->
+      <section id="scorers" class="max-w-6xl mx-auto px-6 py-12">
+        <h3 class="text-3xl font-bold mb-6">Top Scorers</h3>
+        <div id="scorers-container" class="flex space-x-4 overflow-x-auto pb-4"></div>
+      </section>
+    </main>
+
+    <!-- 🧭 Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-400 pt-12 pb-8 mt-12 border-t border-gray-800">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+        <div>
+          <h4 class="text-white font-semibold mb-3">Goalify</h4>
+          <p class="text-sm">Your one-stop destination for live football data, stats, and highlights.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+            <li><a href="#schedules" class="hover:text-blue-400">Matches</a></li>
+            <li><a href="#standings" class="hover:text-blue-400">Standings</a></li>
+            <li><a href="#scorers" class="hover:text-blue-400">Top Scorers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Resources</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://www.football-data.org/" target="_blank" class="hover:text-blue-400">Football Data API</a></li>
+            <li><a href="https://www.sofascore.com" target="_blank" class="hover:text-blue-400">SofaScore</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Contact</h4>
+          <p class="text-sm">Email: support@goalify.com</p>
+        </div>
+      </div>
+      <div class="text-center text-xs text-gray-500 mt-10">© 2025 Goalify | All Rights Reserved</div>
+    </footer>
+
+    <script src="src/script.js"></script>
+    <script src="src/theme.js"></script>
+    <script src="src/navigationbar.js"></script>
+    <script src="src/main.js"></script>
+    <script src="src/auth-modal.js"></script>
   </body>
 </html>
